@@ -216,6 +216,10 @@ export default (props: Props) => (
 
 [本节源代码](src/components/children/SingleChildComponent.js)
 
+## 编译
+使用 `babel` 编译，需要的插件有`env`,`stage-0`,`flow`,`react`。详见[.babelrc](.babelrc)。
+如需在编译后还原使用`prop-types`则需要添加插件[babel-plugin-flow-react-proptypes](https://www.npmjs.com/package/babel-plugin-flow-react-proptypes)。
+
 [create-react-app]:https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-flow
 [call your ref callback with null]:https://reactjs.org/docs/refs-and-the-dom.html#adding-a-ref-to-a-dom-element
 [React Type Reference]:https://flow.org/en/docs/react/types/
