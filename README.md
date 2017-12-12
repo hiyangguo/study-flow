@@ -195,8 +195,26 @@ export default class SpecificElementComponent extends Component<Props> {
 }
 ```
 有时你只需要一个特定的组件作为子组件。我们将 `props` 的 `type` 设置为 `React.ChildrenArray<React.Element<typeof GenerallyComponent>>` 确保 `SpecificElementComponent` 只接收 `GenerallyComponent` 作为子组件。
-[本节源代码](src/components/children/SingleChildComponent.js)
+[本节源代码](src/components/children/SpecificElementComponent.js)
 
+### 只接收一个 children
+```javascript
+// @flow
+import * as React from 'react';
+
+type Props = {
+  children: React.Element<any>,
+};
+
+export default (props: Props) => (
+  <div>
+    {props.children}
+  </div>
+);
+```
+有时候你希望你的组件只接收一个`children`。这时候你只需要去除 `React.ChildrenArray<T>` 的 包裹即可。
+
+[本节源代码](src/components/children/SingleChildComponent.js)
 
 [create-react-app]:https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-flow
 [call your ref callback with null]:https://reactjs.org/docs/refs-and-the-dom.html#adding-a-ref-to-a-dom-element
